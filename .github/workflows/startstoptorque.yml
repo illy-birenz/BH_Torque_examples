@@ -5,24 +5,25 @@ on:
 
 jobs:
   torque-environment:
-    runs-on: ubuntu-latest
-
     steps:
-    - name: Start Torque Environment
-      id: start-environment
-      uses: QualiTorque/torque-start-environment@v1
-      with:
-        space: Demo
-        blueprint_name: WebApp
-        torque_token: ${{ secrets.TORQUE_TOKEN }}
-        duration: 120
-        timeout: 30
-        artifacts: 'flask-app=latest/flaskapp.latest.tar.gz'
-        inputs: 'PORT=8080,AWS_INSTANCE_TYPE=m5.large'
+      - name: Start Torque Environment
+        id: start-environment
+        uses: QualiTorque/torque-start-environment@v1
+        with:
+          space: IB-SE-Candidate-Exercise
+          blueprint_name: ssm
+          torque_token: ${{ secrets.TORQUE_TOKEN }}
+          duration: 30
+          timeout: 30
+          #artifacts: 'flask-app=latest/flaskapp.latest.tar.gz'
+          #inputs: 'PORT=8080,AWS_INSTANCE_TYPE=m5.large'
 
-    - name: End Torque Environment
-      uses: QualiTorque/torque-end-environment@v1
-      with:
-        space: Demo
-        environment_id: ${{ steps.start-environment.outputs.environment_id }}
-        torque_token: ${{ secrets.TORQUE_TOKEN }}
+      - name: Delay for 6 minutes
+        run: sleep 360
+
+      - name: End Torque Environment
+        uses: QualiTorque/torque-end-environment@v1
+        with:
+          space: IB-SE-Candidate-Exercise
+          environment_id: ${{ steps.start-environment.outputs.environment_id }}
+          torque_token: ${{ secrets.TORQUE_TOKEN }}
