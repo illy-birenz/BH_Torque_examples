@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  torque-environment:
+  runs-on: ubuntu-latest
     steps:
       - name: Start Torque Environment
         id: start-environment

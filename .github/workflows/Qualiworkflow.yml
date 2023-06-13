@@ -32,8 +32,6 @@ jobs:
       run: echo "Hello ${{ inputs.name }}"
 
   launch-torque:
-    runs-on: ubuntu-latest
-    
     steps:
     - name: Start Torque Environment
       id: start-env
