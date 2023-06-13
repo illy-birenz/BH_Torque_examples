@@ -13,6 +13,7 @@ jobs:
       with:
         space: IB-SE-Candidate-Exercise
         blueprint_name: ssm
+        repository_name: BH_Torque_examples
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
         timeout: 30
