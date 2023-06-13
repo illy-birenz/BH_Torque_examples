@@ -5,7 +5,6 @@ on:
 
 jobs:
   Launch-stop-torque:
-    runs-on: ubuntu-latest
     steps:
     - name: Start Torque Environment
       id: start-environment
