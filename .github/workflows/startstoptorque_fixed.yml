@@ -1,4 +1,4 @@
-name: Torque Environment Pipeline
+name: Torque Environment Pipeline Quali fixed
 
 on:
   workflow_dispatch:
