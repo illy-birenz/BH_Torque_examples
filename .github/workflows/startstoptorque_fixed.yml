@@ -14,7 +14,6 @@ jobs:
         space: IB-SE-Candidate-Exercise	
         blueprint_name: autogen_ssm
         repository_name: qtorque
-        agent: Quali
         torque_token: ${{ secrets.TORQUE_TOKEN }}
         duration: 30
         timeout: 30
