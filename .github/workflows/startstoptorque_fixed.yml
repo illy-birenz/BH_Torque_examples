@@ -10,7 +10,6 @@ jobs:
     - name: Start Torque Environment
       id: start-environment
       uses: QualiTorque/torque-start-environment@v1
-      agent: Quali
       with:
         space: IB-SE-Candidate-Exercise	
         blueprint_name: autogen_ssm
